@@ -11,6 +11,18 @@
         Nessuna Tipologia
       @endif
     </h3>
+    <h4>
+      @if($project->technologies->isNotEmpty())
+        Tecnologie: 
+        <ul>
+          @foreach ($project->technologies as $technology)
+              <li>{{$technology->name}}</li>
+          @endforeach
+        </ul>
+      @else 
+        Nessuna Tecnologia
+      @endif
+    </h4>
     <div class="mt-4">
         {{$project->content}}
     </div>
